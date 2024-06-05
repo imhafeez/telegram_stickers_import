@@ -16,7 +16,28 @@ Add `telegram_stickers_import` dependency to your pubspec.yaml
 
 #### Android
 
-No special installation required
+Create a new `provider_paths.xml` file in the `res\xml` directory of your Android project. This file
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <cache-path path="." name="cache" />
+</paths>
+```
+
+Add the following to your `AndroidManifest.xml` file inside the `<application>` tag.
+
+```xml
+<provider
+  android:name="androidx.core.content.FileProvider" 
+  android:authorities="${applicationId}.provider"
+  android:exported="false"
+  android:grantUriPermissions="true">
+  <meta-data
+    android:name="android.support.FILE_PROVIDER_PATHS"
+    android:resource="@xml/provider_paths" />
+</provider>
+```
  
 #### iOS
 

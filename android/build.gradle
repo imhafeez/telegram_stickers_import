@@ -28,7 +28,8 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion 30
 
-    applicationId "com.telegram.stickers.import"
+    namespace = "com.otopba.telegram_stickers_import"
+
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -46,6 +47,7 @@ android {
     defaultConfig {
         minSdkVersion 16
     }
+
 }
 
 dependencies {
